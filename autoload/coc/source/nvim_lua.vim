@@ -1,7 +1,7 @@
 function! coc#source#nvim_lua#init() abort
   return {
         \ 'shortcut': 'Nlua',
-        \ 'filetypes': ['lua'],
+        \ 'filetypes': ['lua', 'lua.luapad'],
         \}
 endfunction
 

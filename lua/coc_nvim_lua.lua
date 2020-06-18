@@ -1,3 +1,11 @@
+local function tbl_keys(t)
+  local keys = {}
+  for k, _ in pairs(t) do
+    table.insert(keys, k)
+  end
+  return keys
+end
+
 local function search(s_arr, r_arr)
   if #s_arr == 0 then return end
   if not r_arr then r_arr = _G end
@@ -9,7 +17,7 @@ local function search(s_arr, r_arr)
   end
 
   local result = {}
-  for i, v in ipairs(vim.tbl_keys(r_arr)) do
+  for i, v in ipairs(tbl_keys(r_arr)) do
     if v:find('^' .. head) then table.insert(result, v) end
   end
 
@@ -17,8 +25,8 @@ local function search(s_arr, r_arr)
 end
 
 local function complete(opt)
-  local line = string.sub(opt.line, 0, opt.col)
-  local str = line:match('[%w.]*$')
+  local line = string.sub(opt.line, 0, opt.col) .. opt.input
+  local str = line:match('[%w._]*$')
   local arr = vim.split(str, '.', true)
   return search(arr)
 end
