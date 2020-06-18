@@ -6,7 +6,7 @@ This plugin reads content of lua global table to create completion list. No addi
 ![Luapad print gif](/gifs/coc-nvim-lua.gif)
 
 ### WIP
-This plugin is still under development. Currently, it's working fine... if you are using dot notation and don't make brakes between dots.
+It is still under development. Currently, it's working fine... if you are using dot notation and don't make brakes between dots.
 
 ### Installation
 
